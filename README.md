@@ -7,6 +7,11 @@ Works in six languages: English, Dutch, Arabic, French, German, and Spanish.
 The tool recognizes mood-related words regardless of language and maps them
 to a shared system of ~40 visual concepts (cozy, calm, industrial, romantic, ...).
 
+<p align="center">
+  <img src="docs/screenshot-dark.png" alt="Mood Board Generator — dark mode" width="49%" />
+  <img src="docs/screenshot-light.png" alt="Mood Board Generator — light mode" width="49%" />
+</p>
+
 ## How it works
 
 1. **Concepts** (`src/data/concepts.js`) — language-independent definitions:

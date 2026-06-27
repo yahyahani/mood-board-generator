@@ -16,15 +16,25 @@ export default function ColorPalette({ colors }) {
       {colors.map((hex, index) => (
         <button
           key={hex + index}
-          className="color-swatch"
-          style={{ backgroundColor: hex }}
-          onClick={() => handleCopy(hex, index)}
-          aria-label={`Kopieer kleurcode ${hex}`}
           type="button"
+          className="color-swatch"
+          style={{
+            backgroundColor: hex,
+            animationDelay: `${index * 0.07}s`,
+          }}
+          onClick={() => handleCopy(hex, index)}
+          aria-label={`Kopieer ${hex}`}
         >
-          <span className="color-swatch-label">
-            {copiedIndex === index ? 'Gekopieerd' : hex}
-          </span>
+          <span className="color-swatch-highlight" aria-hidden="true" />
+
+          {copiedIndex === index ? (
+            <span className="color-swatch-copied-overlay">✓</span>
+          ) : (
+            <>
+              <span className="color-swatch-copy-hint" aria-hidden="true">↗</span>
+              <span className="color-swatch-label">{hex}</span>
+            </>
+          )}
         </button>
       ))}
     </div>
